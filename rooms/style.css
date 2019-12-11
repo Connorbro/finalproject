@@ -1,0 +1,38 @@
+body{
+    color: white;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    background-color: orchid;
+    text-align: center;
+    
+  }
+  .column, ul{
+      list-style: none;
+      text-align: center;
+  }
+  .column2, ul{
+    list-style: none;
+    text-align: center;
+}
+.column3, ul{
+    list-style: none;
+    text-align: center;
+}
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column2 {
+    float: left;
+    width: 33.33%;
+    background-color: orange;
+  }
+  .column3 {
+    float: left;
+    width: 33.33%;
+    background-color: blue;
+  }

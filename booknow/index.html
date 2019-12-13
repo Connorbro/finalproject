@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel= "stylesheet" type = "text/css"
-    href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
 <body>
-        <h1> Book rooms now</h1>
-        <form>
-          Which room do you want to book? <br>
-          <input type="text" name="" id="roomsAvailable" />
-          <input type="button" value="book rooms" id="submit" onclick="myFunction();" />
-        </form>
-        
-        <p id="roomsLeft"> There are 10 rooms available </p>
-    
+<div class="booking">
+  <form action="">
+    Booking Date:
+    <input type="date" name="bdate">
+    <br>
+    Start Time:
+    <input type="time" name="time">
+    <br>
+    End Time:
+    <input type="time" name="time">
+    <br>
+    Meeting room:
+    <select>
+      <option value="pink">Pink</option>
+      <option value="pink">Orange</option>
+      <option value="pink">Blue</option>
+    </select>
+    <br>
+    <input type="submit" value="SEND">
+</form>
+</div>
 </body>
-
-<script src="script.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

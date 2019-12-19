@@ -1,0 +1,95 @@
+<html ng-app="timesheet">
+
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/260783/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/260783/style.css">
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/260783/angular.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/260783/angular-animate.min.js"></script>
+  <!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/260783/app.js"></script>-->
+</head>
+
+<body>
+  <div ng-controller="FormController">
+
+    <section id="section-timesheet" ng-class="{ scale: success }">
+
+      <h1>Submit your booking information</h1>
+
+      <div class="inner">
+
+        <form name="formTimesheet" novalidate>
+          <label>Department</label>
+          <input  placeholder="state your work type" required>
+
+          <!-- <label>Time:</label>
+          <input ng-model="ele.time.start"  min="08:00" placeholder="08:00" required> <span></span>
+          <input ng-model="ele.time.end"  min="08:00" max="20:00" placeholder="20:00" required> <span></span>
+           -->
+           <div id="letsGo">
+              <label>Date:</label>
+              <input type="text" id="startoftime" ng-model="ele.date" min="16/12/2019" placeholder="20/12/2019" multiple required> 
+             
+           <label>Time:</label>
+          <input type="text" id="startoftime" ng-model="ele.text.start" min="08:00" placeholder="08:00" multiple required> 
+          <!-- <option ng-repeat="type in ele.time.start" value="{{type}}">{{type}}</option> -->
+
+          <input type="text"  id="endoftime" ng-model="ele.text.end" min="08:00" max="20:00" placeholder="20:00" required> 
+          <option ng-repeat="type in ele.text.end" value="{{type}}"></option>
+
+          
+          <label>Message <span>(optional)</span></label>
+          <textarea ng-model="ele.msg"></textarea>
+
+          <div id="projects">
+            <label>Room type: <span></span></label>
+            <select id="dropDown" name="dropDown" ng-model="selectedItems" multiple required>
+              <option ng-repeat="type in ele.selectTypes" value="{{type}}">{{type}}</option>
+            </select>
+
+            <div id="create-new">
+              <input type="text" ng-model="newType" placeholder="add rooms">
+              <button class="button" type="button" ng-click="createNew(newType)">Add New</button>
+            </div>
+          </div>
+        </div>
+
+          <div id="buttons">
+            <button class="button grey flex-item" type="reset" ng-click="clearInfo()">Clear</button>
+            <input ng-init="success = false" class="button flex-item" type="button" value="Next" ng-click="saveForm()" ng-disabled="formTimesheet.$invalid">
+          </div>
+        </form>
+
+      </div>
+
+      <div class="overlay" ng-class="{ animateShow:clicked }">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="section-thankyou" ng-class="{ hidden:!success, shown: success }">
+      <h1>Timesheet Submitted</h1>
+
+      <div class="inner">
+
+        <p>Thank you <span class="green">{{ele.email}}</span>.</p>
+        <p>You have made an enquiry for the time <span class="green">{{ele.text.start}}</span> until <span class="green"> {{ele.text.end}} </span> <span class="green"> {{ele.date}} </span>in the <span class="green">{{ele.selectTypes[0]}} room. 
+        </span></p>
+                                                                                                                                                                 <!-- {{ele.selectTypes[i]}}                -->
+        <button class="button" type="reset" ng-click="startAgain()">Change info</button>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>
